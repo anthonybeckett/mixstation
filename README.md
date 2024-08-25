@@ -22,6 +22,7 @@ for others to listen to. It is built on a VueJS frontend, Laravel backend and a 
 - [ ] Find a free service to create a task board or host something on a raspberry pi
   - Set up a local Raspberry Pi
   - Host Youtrack - https://www.jetbrains.com/youtrack/ 
+    - https://www.jetbrains.com/help/youtrack/server/7.0/Install-YouTrack-ZIP-Installation.html
   
 
 ### Functionality
