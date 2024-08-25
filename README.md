@@ -7,7 +7,7 @@ for others to listen to. It is built on a VueJS frontend, Laravel backend and a 
 
 ### Frontend
 - [ ] Setup VueJS
-- [ ] Setup Vuetify
+- [ ] Setup PrimeVue - https://primevue.org/
 - [ ] Setup Vue Audio Visual - https://github.com/staskobzar/vue-audio-visual
 - [ ] Setup Tailwind CSS
 
@@ -15,9 +15,14 @@ for others to listen to. It is built on a VueJS frontend, Laravel backend and a 
 - [ ] Setup Laravel
 - [ ] Init API mode
 - [ ] Setup MySQL 9 locally
+- [ ] Setup Larastan - https://github.com/larastan/larastan
+- [ ] Setup Laravel Pint - https://laravel.com/docs/11.x/pint
 
 ### Other
-- [ ] Find a free service to create a task board or host something on a raspberry pi 
+- [ ] Find a free service to create a task board or host something on a raspberry pi
+  - Set up a local Raspberry Pi
+  - Host Youtrack - https://www.jetbrains.com/youtrack/ 
+  
 
 ### Functionality
 - [ ] User login/logout and authentication
