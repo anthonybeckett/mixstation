@@ -7,9 +7,12 @@ for others to listen to. It is built on a VueJS frontend, Laravel backend and a 
 
 ### Frontend
 - [ ] Setup VueJS
+- [ ] Install Vue Router
+- [ ] Install Pinia
 - [ ] Setup PrimeVue - https://primevue.org/
 - [ ] Setup Vue Audio Visual - https://github.com/staskobzar/vue-audio-visual
 - [ ] Setup Tailwind CSS
+- [ ] Setup ESLint
 
 ### Backend
 - [ ] Setup Laravel
@@ -17,13 +20,6 @@ for others to listen to. It is built on a VueJS frontend, Laravel backend and a 
 - [ ] Setup MySQL 9 locally
 - [ ] Setup Larastan - https://github.com/larastan/larastan
 - [ ] Setup Laravel Pint - https://laravel.com/docs/11.x/pint
-
-### Other
-- [ ] Find a free service to create a task board or host something on a raspberry pi
-  - Set up a local Raspberry Pi
-  - Host Youtrack - https://www.jetbrains.com/youtrack/ 
-    - https://www.jetbrains.com/help/youtrack/server/7.0/Install-YouTrack-ZIP-Installation.html
-  
 
 ### Functionality
 - [ ] User login/logout and authentication
@@ -53,3 +49,9 @@ This will come later when the project is at a decent point
 
 ### React Native
 Will need to flesh this out more but not a high priority for a mobile app
+
+### Other
+- [ ] Find a free service to create a task board or host something on a raspberry pi
+  - Set up a local Raspberry Pi
+  - Host Youtrack - https://www.jetbrains.com/youtrack/
+    - https://www.jetbrains.com/help/youtrack/server/7.0/Install-YouTrack-ZIP-Installation.html
