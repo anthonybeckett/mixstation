@@ -5,7 +5,7 @@
 <template>
   <main>
       <h1>
-          Home view
+          Test
       </h1>
   </main>
 </template>
