@@ -127,9 +127,45 @@
       <path value="$PROJECT_DIR$/backend/vendor/laravel/sanctum" />
       <path value="$PROJECT_DIR$/backend/vendor/laravel/prompts" />
       <path value="$PROJECT_DIR$/backend/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/backend/vendor/larastan/larastan" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpmyadmin/sql-parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/reflection" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/backend/vendor/kelunik/certificate" />
+      <path value="$PROJECT_DIR$/backend/vendor/spatie/laravel-data" />
+      <path value="$PROJECT_DIR$/backend/vendor/spatie/laravel-package-tools" />
+      <path value="$PROJECT_DIR$/backend/vendor/spatie/php-structure-discoverer" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/process" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/dns" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/serialization" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/socket" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/windows-registry" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/cache" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/pipeline" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/byte-stream" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/parallel" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/amp" />
+      <path value="$PROJECT_DIR$/backend/vendor/amphp/sync" />
+      <path value="$PROJECT_DIR$/backend/vendor/revolt/event-loop" />
+      <path value="$PROJECT_DIR$/backend/vendor/daverandom/libdns" />
+      <path value="$PROJECT_DIR$/backend/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/backend/vendor/lorisleiva/lody" />
+      <path value="$PROJECT_DIR$/backend/vendor/lorisleiva/laravel-actions" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <PhpStanConfiguration tool_path="$PROJECT_DIR$/backend/vendor/bin/phpstan" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

@@ -35,11 +35,22 @@ Next, we need to create a .env and update the DB credentials as needed.
   cp .env.example .env
 ```
 
-Now we can run the migrations then start the API
+Now we can run the migrations then start the API. The backend uses docker through Laravel Sail.
 ```bash
   php artisan migrate
   
-  php artisan serve
+  ./vendor/bin/sail up -d
+```
+
+To analyse the code base, we can run PHP Stan
+
+```bash
+./vendor/bin/phpstan analyse
+```
+
+To format the codebase we can run PHP Pint  
+```bash
+./vendor/bin/pint
 ```
 
 
@@ -53,13 +64,14 @@ Now we can run the migrations then start the API
 - [x] Setup Vue Audio Visual - https://github.com/staskobzar/vue-audio-visual
 - [x] Setup Tailwind CSS
 - [x] Setup ESLint
+- [ ] Setup docker
 
 ### Backend
 - [x] Setup Laravel
 - [x] Init API mode
-- [ ] Setup MySQL 9 locally
-- [ ] Setup Larastan - https://github.com/larastan/larastan
-- [ ] Setup Laravel Pint - https://laravel.com/docs/11.x/pint
+- [x] Setup Larastan - https://github.com/larastan/larastan
+- [x] Setup Laravel Pint - https://laravel.com/docs/11.x/pint
+- [x] Setup Laravel Data & Actions
 
 ### Functionality
 - [ ] User login/logout and authentication
@@ -83,8 +95,6 @@ Now we can run the migrations then start the API
 ### Docker
 This will come later when the project is at a decent point
 - [ ] Setup and containerise Vue JS frontend
-- [ ] Install Sail on the backend
-- [ ] Update Sail MySQL to version 9
 - [ ] Make global docker compose file including the files from both directories
 
 ### React Native

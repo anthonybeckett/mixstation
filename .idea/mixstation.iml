@@ -5,11 +5,26 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/backend/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/backend/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/backend/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/amp" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/byte-stream" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/dns" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/parallel" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/parser" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/pipeline" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/process" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/serialization" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/sync" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/amphp/windows-registry" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/carbonphp/carbon-doctrine-types" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/daverandom/libdns" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/deprecations" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/dragonmantank/cron-expression" />
@@ -23,6 +38,8 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/guzzlehttp/uri-template" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/kelunik/certificate" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/larastan/larastan" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/breeze" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/pint" />
@@ -36,6 +53,10 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/league/flysystem-local" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/league/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/league/uri-interfaces" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/lorisleiva/laravel-actions" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/lorisleiva/lody" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/myclabs/deep-copy" />
@@ -47,7 +68,14 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/nunomaduro/termwind" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpdocumentor/reflection" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpmyadmin/sql-parser" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpstan/phpdoc-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpstan/phpstan" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpunit/php-file-iterator" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpunit/php-invoker" />
@@ -66,6 +94,7 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/revolt/event-loop" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sebastian/cli-parser" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sebastian/code-unit" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sebastian/code-unit-reverse-lookup" />
@@ -81,6 +110,9 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sebastian/type" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/spatie/laravel-data" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/spatie/php-structure-discoverer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/clock" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/css-selector" />
