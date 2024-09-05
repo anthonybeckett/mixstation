@@ -3,11 +3,13 @@
 </script>
 
 <template>
-  <main class="mx-auto px-8 bg-gray">
-      <h1>
+  <main class="mx-auto px-[350px] h-full">
+      <h1 class="my-4">
           Welcome back!
       </h1>
 
-      <AudioPlayer :src="'/audio/sample.mp3'" />
+      <AudioPlayer :src="'/audio/sample.mp3'" class="mt-8" title="Test Audio MP3" />
+
+      <AudioPlayer :src="'/audio/sample.wav'" class="mt-8" title="Test Audio WAV" />
   </main>
 </template>
