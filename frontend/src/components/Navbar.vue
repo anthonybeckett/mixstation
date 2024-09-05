@@ -18,7 +18,11 @@
             <template #end>
                 <div class="flex items-center gap-2">
                     <InputText placeholder="Search" type="text" class="w-32 sm:w-auto" />
-                    <i class="pi pi-bell cursor-pointer mx-2" style="font-size: 1.25rem"></i>
+
+                    <OverlayBadge value="2" size="small" severity="info" class="cursor-pointer">
+                        <i class="pi pi-bell cursor-pointer mx-2" style="font-size: 1.25rem"></i>
+                    </OverlayBadge>
+
                     <Avatar label="AB" size="large" shape="circle" class="cursor-pointer mx-2" />
                 </div>
             </template>
