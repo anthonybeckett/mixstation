@@ -3,10 +3,50 @@
 This is an app similar to Soundcloud, Mixcloud or HearThis where users can upload their DJ mixes
 for others to listen to. It is built on a VueJS frontend, Laravel backend and a MySQL 9 database.
 
+# Development
+
+## Frontend (Vue 3)
+
+To get started with the frontend run the following in a terminal.
+
+```bash
+  cd ./frontend
+  
+  npm i
+  
+  npm run dev
+```
+
+The frontend should now be running on port 5173 unless specified different.
+
+## Backend (Laravel 11)
+
+To get started running, first we need to install the composer packages in the backend directory.
+
+```bash
+  cd ./backend
+
+  composer install
+```
+
+Next, we need to create a .env and update the DB credentials as needed.
+
+```bash
+  cp .env.example .env
+```
+
+Now we can run the migrations then start the API
+```bash
+  php artisan migrate
+  
+  php artisan serve
+```
+
+
 ## Todo:
 
 ### Frontend
-- [ ] Setup VueJS
+- [x] Setup VueJS
 - [ ] Install Vue Router
 - [ ] Install Pinia
 - [ ] Setup PrimeVue - https://primevue.org/
@@ -15,8 +55,8 @@ for others to listen to. It is built on a VueJS frontend, Laravel backend and a 
 - [ ] Setup ESLint
 
 ### Backend
-- [ ] Setup Laravel
-- [ ] Init API mode
+- [x] Setup Laravel
+- [x] Init API mode
 - [ ] Setup MySQL 9 locally
 - [ ] Setup Larastan - https://github.com/larastan/larastan
 - [ ] Setup Laravel Pint - https://laravel.com/docs/11.x/pint
