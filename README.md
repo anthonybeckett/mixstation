@@ -49,9 +49,9 @@ Now we can run the migrations then start the API
 - [x] Setup VueJS
 - [x] Install Vue Router
 - [x] Install Pinia
-- [ ] Setup PrimeVue - https://primevue.org/
-- [ ] Setup Vue Audio Visual - https://github.com/staskobzar/vue-audio-visual
-- [ ] Setup Tailwind CSS
+- [x] Setup PrimeVue - https://primevue.org/
+- [x] Setup Vue Audio Visual - https://github.com/staskobzar/vue-audio-visual
+- [x] Setup Tailwind CSS
 - [x] Setup ESLint
 
 ### Backend
