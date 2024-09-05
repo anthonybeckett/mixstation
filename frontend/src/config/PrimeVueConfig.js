@@ -3,13 +3,18 @@ import Badge from 'primevue/badge';
 import InputText from 'primevue/inputtext';
 import Avatar from 'primevue/avatar';
 import Menubar from 'primevue/menubar';
+import Image from 'primevue/image';
 import PrimeVue from "primevue/config";
 import Lara from "@primevue/themes/lara";
+
 
 export default function setupPrimeVue(app) {
     app.use(PrimeVue, {
         theme: {
-            preset: Lara
+            preset: Lara,
+            options: {
+                darkModeSelector: '.my-app-dark',
+            }
         },
         ripple: true,
     });
@@ -18,5 +23,7 @@ export default function setupPrimeVue(app) {
     app.component('InputText', InputText);
     app.component('Avatar', Avatar);
     app.component('Menubar', Menubar);
+    app.component('Image', Image);
+
     app.directive('ripple', Ripple);
 }

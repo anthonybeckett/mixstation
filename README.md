@@ -68,6 +68,7 @@ To format the codebase we can run PHP Pint
 - [x] ~~Setup Tailwind CSS~~
 - [x] ~~Setup ESLint~~
 - [x] ~~Tidy up index.js and move some config options into a config directory~~
+- [ ] Add dark mode button - https://primevue.org/theming/styled/#darkmode
 - [ ] Setup docker
 
 ### Backend
