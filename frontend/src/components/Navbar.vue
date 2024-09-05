@@ -2,7 +2,9 @@
     <div class="card">
         <Menubar :model="items">
             <template #start>
-                <Logo :size="90" />
+                <router-link to="/">
+                    <Logo :size="90" />
+                </router-link>
             </template>
 
             <template #item="{ item, props, hasSubmenu, root }">
@@ -16,14 +18,14 @@
             </template>
 
             <template #end>
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-8">
                     <InputText placeholder="Search" type="text" class="w-32 sm:w-auto" />
 
                     <OverlayBadge value="2" size="small" severity="info" class="cursor-pointer">
-                        <i class="pi pi-bell cursor-pointer mx-2" style="font-size: 1.25rem"></i>
+                        <i class="pi pi-bell cursor-pointer" style="font-size: 1.25rem"></i>
                     </OverlayBadge>
 
-                    <Avatar label="AB" size="large" shape="circle" class="cursor-pointer mx-2" />
+                    <Avatar label="AB" size="medium" shape="circle" class="cursor-pointer" />
                 </div>
             </template>
         </Menubar>

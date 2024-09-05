@@ -5,6 +5,7 @@ import Avatar from 'primevue/avatar';
 import Menubar from 'primevue/menubar';
 import Image from 'primevue/image';
 import OverlayBadge from 'primevue/overlaybadge';
+import Button from 'primevue/button';
 import PrimeVue from "primevue/config";
 import Lara from "@primevue/themes/lara";
 
@@ -25,6 +26,7 @@ export default function setupPrimeVue(app) {
     app.component('Avatar', Avatar);
     app.component('Menubar', Menubar);
     app.component('Image', Image);
+    app.component('Button', Button);
     app.component('OverlayBadge', OverlayBadge);
 
     app.directive('ripple', Ripple);
