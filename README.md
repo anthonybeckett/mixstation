@@ -56,22 +56,26 @@ To format the codebase we can run PHP Pint
 
 ## Todo:
 
+### Design bits:
+- [ ] Create a logo 
+
 ### Frontend
-- [x] Setup VueJS
-- [x] Install Vue Router
-- [x] Install Pinia
-- [x] Setup PrimeVue - https://primevue.org/
-- [x] Setup Vue Audio Visual - https://github.com/staskobzar/vue-audio-visual
-- [x] Setup Tailwind CSS
-- [x] Setup ESLint
+- [x] ~~Setup VueJS~~
+- [x] ~~Install Vue Router~~
+- [x] ~~Install Pinia~~
+- [x] ~~Setup PrimeVue - https://primevue.org/~~
+- [x] ~~Setup Vue Audio Visual - https://github.com/staskobzar/vue-audio-visual~~
+- [x] ~~Setup Tailwind CSS~~
+- [x] ~~Setup ESLint~~
+- [x] ~~Tidy up index.js and move some config options into a config directory~~
 - [ ] Setup docker
 
 ### Backend
-- [x] Setup Laravel
-- [x] Init API mode
-- [x] Setup Larastan - https://github.com/larastan/larastan
-- [x] Setup Laravel Pint - https://laravel.com/docs/11.x/pint
-- [x] Setup Laravel Data & Actions
+- [x] ~~Setup Laravel~~
+- [x] ~~Init API mode~~
+- [x] ~~Setup Larastan - https://github.com/larastan/larastan~~
+- [x] ~~Setup Laravel Pint - https://laravel.com/docs/11.x/pint~~
+- [x] ~~Setup Laravel Data & Actions~~
 
 ### Functionality
 - [ ] User login/logout and authentication
