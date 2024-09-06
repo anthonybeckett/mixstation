@@ -32,6 +32,7 @@ const playAudio = () => {
             <div>
                 <div class="flex items-center">
                     <Button
+                        rounded
                         @click="playAudio"
                         :outlined="true"
                         class="mr-4"
@@ -39,7 +40,11 @@ const playAudio = () => {
                         severity="info"
                     ></Button>
 
-                    <h1 class="text-2xl pb-2">{{ props.title }}</h1>
+                    <div class="flex flex-col">
+                        <span class="text-xl pb-2 font-bold">{{ props.title }}</span>
+                        <span class="text-sm pb-2 text-blue-500">Test User</span>
+                    </div>
+
                 </div>
 
 

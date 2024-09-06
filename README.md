@@ -56,6 +56,10 @@ To format the codebase we can run PHP Pint
 
 ## Todo:
 
+### Issues
+- [ ] Implement own FFT analyser and cache results when page changes
+- [ ] Make waveform resizeable to fill width of container object
+
 ### Design bits:
 - [ ] Create a logo 
 
@@ -69,7 +73,6 @@ To format the codebase we can run PHP Pint
 - [x] ~~Setup ESLint~~
 - [x] ~~Tidy up index.js and move some config options into a config directory~~
 - [ ] Add dark mode button - https://primevue.org/theming/styled/#darkmode
-- [ ] Make waveform draw re-sizeable from element width
 - [ ] Setup docker
 
 ### Backend
