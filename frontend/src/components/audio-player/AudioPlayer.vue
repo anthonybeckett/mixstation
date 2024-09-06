@@ -1,6 +1,6 @@
 <script setup>
-import {AVWaveform} from 'vue-audio-visual';
-import {ref} from 'vue';
+import { AVWaveform } from 'vue-audio-visual';
+import {computed, onMounted, ref} from 'vue';
 
 const props = defineProps({
     src: String,
@@ -24,22 +24,36 @@ const playAudio = () => {
 </script>
 
 <template>
-    <section class="border-2 p-4">
-        <h1 class="text-2xl pb-2">{{ props.title }}</h1>
+    <section class="border-b p-4">
+        <div class="flex gap-4">
+            <div>
+                <Image src="/images/blank-artwork.png" alt="Image" width="90" />
+            </div>
+            <div>
+                <div class="flex items-center">
+                    <Button
+                        @click="playAudio"
+                        :outlined="true"
+                        class="mr-4"
+                        :icon="isPlaying ? 'pi pi-pause' : 'pi pi-play'"
+                        severity="info"
+                    ></Button>
 
-        <div class="flex">
-            <Button @click="playAudio" :outlined="true">{{ isPlaying ? 'Pause' : 'Play' }}</Button>
+                    <h1 class="text-2xl pb-2">{{ props.title }}</h1>
+                </div>
 
-            <AVWaveform
-                ref="audioTest"
-                :src="props.src"
-                :audio-controls="false"
-                :noplayed-line-color="'#B3B3B3'"
-                :played-line-color="'#0EA5E9'"
-                :playtime-slider="false"
-                :playtime-with-ms="false"
-                :playtime-slider-color="'#fff'"
-            />
+
+                <AVWaveform
+                    ref="audioTest"
+                    :src="props.src"
+                    :audio-controls="false"
+                    :noplayed-line-color="'#B3B3B3'"
+                    :played-line-color="'#0EA5E9'"
+                    :playtime-slider="false"
+                    :playtime-with-ms="false"
+                    :playtime-slider-color="'#fff'"
+                />
+            </div>
         </div>
     </section>
 </template>
