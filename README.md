@@ -69,6 +69,7 @@ To format the codebase we can run PHP Pint
 - [x] ~~Setup ESLint~~
 - [x] ~~Tidy up index.js and move some config options into a config directory~~
 - [ ] Add dark mode button - https://primevue.org/theming/styled/#darkmode
+- [ ] Make waveform draw re-sizeable from element width
 - [ ] Setup docker
 
 ### Backend
@@ -96,6 +97,8 @@ To format the codebase we can run PHP Pint
 - [ ] Mix tags for genre
 - [ ] User can create playlists to group their mixes
 - [ ] Player has custom playlist ability to add multiple mixes
+- [ ] Feature on backend which converts audio to MP3
+- [ ] Artwork on each mix to display on the mix
 
 ### Docker
 This will come later when the project is at a decent point
