@@ -1,6 +1,7 @@
 <script setup>
 import { AVWaveform } from 'vue-audio-visual';
 import {computed, onMounted, ref} from 'vue';
+import AudioOptionsAndStats from "@/components/audio-player/AudioOptionsAndStats.vue";
 
 const props = defineProps({
     src: String,
@@ -27,9 +28,9 @@ const playAudio = () => {
     <section class="border-b p-4">
         <div class="flex gap-4">
             <div>
-                <Image src="/images/blank-artwork.png" alt="Image" width="90" />
+                <Image src="/images/blank-artwork.png" alt="Image" width="180" />
             </div>
-            <div>
+            <div class="w-full">
                 <div class="flex items-center">
                     <Button
                         rounded
@@ -58,7 +59,13 @@ const playAudio = () => {
                     :playtime-with-ms="false"
                     :playtime-slider-color="'#fff'"
                 />
+
+                <AudioOptionsAndStats />
             </div>
+        </div>
+
+        <div>
+
         </div>
     </section>
 </template>

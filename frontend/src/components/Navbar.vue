@@ -22,7 +22,7 @@
                     <InputText placeholder="Search" type="text" class="w-32 sm:w-auto" />
 
                     <OverlayBadge value="2" size="small" severity="info" class="cursor-pointer">
-                        <i class="pi pi-bell cursor-pointer" style="font-size: 1.25rem"></i>
+                        <i class="pi pi-bell cursor-pointer" style="font-size: 1rem"></i>
                     </OverlayBadge>
 
                     <Avatar label="AB" size="medium" shape="circle" class="cursor-pointer" />

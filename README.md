@@ -102,6 +102,7 @@ To format the codebase we can run PHP Pint
 - [ ] Player has custom playlist ability to add multiple mixes
 - [ ] Feature on backend which converts audio to MP3
 - [ ] Artwork on each mix to display on the mix
+- [ ] Able to make tracks private and create a private share link
 
 ### Docker
 This will come later when the project is at a decent point
