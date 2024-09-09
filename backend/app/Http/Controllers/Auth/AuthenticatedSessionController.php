@@ -17,15 +17,22 @@ class AuthenticatedSessionController extends Controller
     public function store(Request $request): JsonResponse
     {
         $request->validate([
-            'email' => 'required|string|email',
+            'email' => 'required|string|email|exists:users,email',
             'password' => 'required|string',
+            'remember' => 'boolean'
         ]);
 
-        if (!Auth::attempt($request->only('email', 'password'))) {
+        $remember = $request->remember ?? false;
+
+        if (!Auth::attempt($request->only('email', 'password'), $remember)) {
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
 
-        return response()->json(Auth::user());
+        $user = Auth::user();
+
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json(['user' => $user, 'token' => $token], 201);
     }
 
     /**
@@ -33,7 +40,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): Response
     {
-        Auth::logout();
+        $request->user()->tokens()->delete();
 
         return response()->noContent();
     }

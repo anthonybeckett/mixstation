@@ -4,6 +4,7 @@ namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 
 class AuthenticationTest extends TestCase
@@ -20,7 +21,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertOk();
+        $response->assertStatus(201);
     }
 
     public function test_users_can_not_authenticate_with_invalid_password(): void
@@ -39,9 +40,14 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()->create();
 
+        $token = $user->createToken('TestToken')->plainTextToken;
+
         $response = $this->actingAs($user)->post('/api/logout');
 
-        $this->assertGuest();
+        $emptyToken = DB::table('personal_access_tokens')->where('token', $token)->first();
+
+        $this->assertNull($emptyToken);
+
         $response->assertNoContent();
     }
 }
