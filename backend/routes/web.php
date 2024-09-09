@@ -2,8 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return ['Laravel' => app()->version()];
-});
-
-require __DIR__.'/auth.php';
+// This file should not be edited, we are exclusively using this as an API
