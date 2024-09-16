@@ -8,6 +8,8 @@ import OverlayBadge from 'primevue/overlaybadge';
 import Button from 'primevue/button';
 import PrimeVue from "primevue/config";
 import Lara from "@primevue/themes/lara";
+import Dialog from 'primevue/dialog';
+import FloatLabel from "primevue/floatlabel";
 
 
 export default function setupPrimeVue(app) {
@@ -28,6 +30,8 @@ export default function setupPrimeVue(app) {
     app.component('Image', Image);
     app.component('Button', Button);
     app.component('OverlayBadge', OverlayBadge);
+    app.component('Dialog', Dialog);
+    app.component('FloatLabel', FloatLabel);
 
     app.directive('ripple', Ripple);
 }
