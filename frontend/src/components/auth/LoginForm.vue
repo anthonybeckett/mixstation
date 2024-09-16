@@ -1,5 +1,6 @@
 <script setup>
 import {inject, ref} from "vue";
+import Logo from "@/components/assets/Logo.vue";
 
 const { signInFormVisible } = inject('signInFormVisible');
 
@@ -21,7 +22,11 @@ const signIn = (closeSignInModal) => {
             pt:mask:class="backdrop-blur-sm"
         >
             <template #container="{ closeCallback }">
-                <div class="flex flex-col px-8 py-8 gap-6 rounded-2xl bg-white">
+                <div class="flex flex-col px-8 py-8 gap-2 rounded-2xl bg-white">
+                    <div class="flex justify-center">
+                        <Logo :size="120" class="flex justify-center" />
+                    </div>
+
                     <h1 class="font-bold text-xl text-center">Log In</h1>
 
                     <div class="flex flex-col gap-8">

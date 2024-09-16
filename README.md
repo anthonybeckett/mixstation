@@ -63,7 +63,7 @@ To format the codebase we can run PHP Pint
 - [ ] Fix password reset using API
 
 ### Design bits:
-- [ ] Create a logo 
+- [x] ~~Create a logo~~ 
 
 ### Frontend
 - [x] ~~Setup VueJS~~
