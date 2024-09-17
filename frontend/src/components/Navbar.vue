@@ -60,10 +60,13 @@ import Logo from "@/components/assets/Logo.vue";
 import {ref, provide} from "vue";
 import LoginForm from "@/components/auth/LoginForm.vue";
 import RegisterForm from "@/components/auth/RegisterForm.vue";
+import { useAuthStore } from "@/stores/AuthStore.js";
+
+const authStore = useAuthStore();
 
 const signInFormVisible = ref(false);
 const registerFormVisible = ref(false);
-const userLoggedIn = ref(false);
+const userLoggedIn = ref(authStore.isAuthenticated);
 
 provide('signInFormVisible', { signInFormVisible });
 provide('registerFormVisible', { registerFormVisible });

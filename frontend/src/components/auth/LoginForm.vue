@@ -1,6 +1,9 @@
 <script setup>
 import {inject, ref} from "vue";
 import Logo from "@/components/assets/Logo.vue";
+import { useAuthStore } from "@/stores/AuthStore.js";
+
+const authStore = useAuthStore();
 
 const { signInFormVisible } = inject('signInFormVisible');
 
@@ -8,7 +11,10 @@ const email = ref('');
 const password = ref('');
 
 const signIn = (closeSignInModal) => {
-    console.log("Called");
+    authStore.login({
+        email: email.value,
+        password: password.value
+    });
 
     closeSignInModal();
 }
@@ -36,7 +42,7 @@ const signIn = (closeSignInModal) => {
                         </FloatLabel>
 
                         <FloatLabel>
-                            <InputText id="password" v-model="password" />
+                            <InputText id="password" type="password" v-model="password" />
                             <label for="password">Password</label>
                         </FloatLabel>
                     </div>

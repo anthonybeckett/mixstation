@@ -5,4 +5,9 @@ const api = axios.create({
     withCredentials: true,
 });
 
+export const sanctum = axios.create({
+    baseURL: 'http://localhost/',
+    withCredentials: true,
+});
+
 export default api;

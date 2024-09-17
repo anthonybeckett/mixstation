@@ -57,10 +57,11 @@ To format the codebase we can run PHP Pint
 ## Todo:
 
 ### Issues / Clean up
-- [ ] Implement own FFT analyser and cache results when page changes
+- [ ] Implement own waveform analyser and cache results when page changes
 - [ ] Make waveform resizeable to fill width of container object
 - [ ] Rename backend database to mixstation and rebuild container
-- [ ] Fix password reset using API
+- [ ] Handle errors and show when login/register fails
+- [ ] Set up cookie when user logs in or registers to store token
 
 ### Design bits:
 - [x] ~~Create a logo~~ 

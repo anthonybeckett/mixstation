@@ -1,7 +1,9 @@
 <script setup>
 import {inject, ref} from "vue";
 import Logo from "@/components/assets/Logo.vue";
+import { useAuthStore } from "@/stores/AuthStore.js";
 
+const authStore = useAuthStore();
 const { registerFormVisible } = inject('registerFormVisible');
 
 const name = ref('');
@@ -10,7 +12,12 @@ const password = ref('');
 const passwordConfirmation = ref('');
 
 const register = (closeRegisterModal) => {
-    console.log("Called");
+    authStore.register({
+        name: name.value,
+        email: email.value,
+        password: password.value,
+        password_confirmation: passwordConfirmation.value
+    });
 
     closeRegisterModal();
 }
@@ -43,12 +50,12 @@ const register = (closeRegisterModal) => {
                         </FloatLabel>
 
                         <FloatLabel>
-                            <InputText id="password" v-model="password" />
+                            <InputText id="password" type="password" v-model="password" />
                             <label for="password">Password</label>
                         </FloatLabel>
 
                         <FloatLabel>
-                            <InputText id="password-confirmation" v-model="passwordConfirmation" />
+                            <InputText id="password-confirmation" type="password" v-model="passwordConfirmation" />
                             <label for="password-confirmation">Confirm Password</label>
                         </FloatLabel>
                     </div>
