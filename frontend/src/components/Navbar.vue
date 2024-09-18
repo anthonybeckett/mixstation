@@ -29,7 +29,7 @@
                     <!--                        <i class="pi pi-bell cursor-pointer" style="font-size: 1rem"></i>-->
                     <!--                    </OverlayBadge>-->
 
-                    <div v-if="userLoggedIn">
+                    <div v-if="authStore.isAuthenticated">
                         <Avatar label="AB" size="medium" shape="circle" class="cursor-pointer" />
                     </div>
                     <div v-else>
@@ -66,7 +66,6 @@ const authStore = useAuthStore();
 
 const signInFormVisible = ref(false);
 const registerFormVisible = ref(false);
-const userLoggedIn = ref(authStore.isAuthenticated);
 
 provide('signInFormVisible', { signInFormVisible });
 provide('registerFormVisible', { registerFormVisible });
