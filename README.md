@@ -61,7 +61,7 @@ To format the codebase we can run PHP Pint
 - [ ] Make waveform resizeable to fill width of container object
 - [ ] Rename backend database to mixstation and rebuild container
 - [ ] Handle errors and show when login/register fails
-- [ ] Set up cookie when user logs in or registers to store token
+- [x] ~~Set up cookie when user logs in or registers to store token~~
 
 ### Design bits:
 - [x] ~~Create a logo~~ 

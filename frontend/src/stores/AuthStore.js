@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import api, { sanctum } from '../api/Api';
+import VueCookies from 'vue-cookies';
 
 export const useAuthStore = defineStore('auth', {
     state: () => ({
@@ -15,6 +16,8 @@ export const useAuthStore = defineStore('auth', {
                 if (results.status === 201) {
                     this.user = results.data.user;
                     this.token = results.data.token;
+
+                    VueCookies.set('auth_token', this.token, null, null, null, true);
 
                     return true;
                 }
@@ -32,6 +35,10 @@ export const useAuthStore = defineStore('auth', {
                     this.user = results.data.user;
                     this.token = results.data.token;
 
+                    console.log(VueCookies);
+
+                    VueCookies.set('auth_token', this.token, null, null, null, true);
+
                     return true;
                 }
             } catch (error) {
@@ -45,9 +52,15 @@ export const useAuthStore = defineStore('auth', {
                 await api.post('/logout');
                 this.user = null;
                 this.token = null;
+
+                VueCookies.remove('auth_token');
+
+                return true;
             } catch (error) {
                 console.error('Logout failed:', error);
             }
+
+            return false;
         },
         async fetchUser() {
             try {

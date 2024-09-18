@@ -22,6 +22,7 @@
     "tailwindcss-primeui": "^0.3.4",
     "vue": "^3.4.29",
     "vue-audio-visual": "^3.0.8",
+    "vue-cookies": "^1.8.4",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
