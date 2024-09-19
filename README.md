@@ -86,7 +86,7 @@ To format the codebase we can run PHP Pint
 - [x] ~~Setup Laravel Data & Actions~~
 
 ### Functionality
-- [ ] User login/logout and authentication
+- [x] ~~User login/logout and authentication~~
 - [ ] Forgot credentials feature
 - [ ] Upload mixes (MP3 or WAV)
 - [ ] List mixes they have uploaded

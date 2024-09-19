@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <Menubar :model="items">
+        <Menubar :model="mainNavItems">
             <template #start>
                 <router-link to="/">
                     <Logo :size="90"/>
@@ -30,7 +30,8 @@
                     <!--                    </OverlayBadge>-->
 
                     <div v-if="authStore.isAuthenticated">
-                        <Avatar label="AB" size="medium" shape="circle" class="cursor-pointer" />
+                        <Avatar label="AB" size="large" shape="circle" class="cursor-pointer" @click="toggleAvatarMenu" />
+                        <TieredMenu :model="avatarMenuItems" ref="avatarMenu" popup></TieredMenu>
                     </div>
                     <div v-else>
                         <Button
@@ -50,8 +51,8 @@
             </template>
         </Menubar>
 
-        <LoginForm />
-        <RegisterForm />
+        <LoginForm/>
+        <RegisterForm/>
     </div>
 </template>
 
@@ -60,17 +61,18 @@ import Logo from "@/components/assets/Logo.vue";
 import {ref, provide} from "vue";
 import LoginForm from "@/components/auth/LoginForm.vue";
 import RegisterForm from "@/components/auth/RegisterForm.vue";
-import { useAuthStore } from "@/stores/AuthStore.js";
+import {useAuthStore} from "@/stores/AuthStore.js";
 
 const authStore = useAuthStore();
 
 const signInFormVisible = ref(false);
 const registerFormVisible = ref(false);
+const avatarMenu = ref();
 
-provide('signInFormVisible', { signInFormVisible });
-provide('registerFormVisible', { registerFormVisible });
+provide('signInFormVisible', {signInFormVisible});
+provide('registerFormVisible', {registerFormVisible});
 
-const items = ref([
+const mainNavItems = ref([
     {
         label: 'Dashboard',
         icon: 'pi pi-home',
@@ -82,4 +84,16 @@ const items = ref([
         to: '/test'
     },
 ]);
+
+const avatarMenuItems = ref([
+    {
+        label: 'Logout',
+        icon: 'pi pi-sign-out',
+        command: () => authStore.logout()
+    },
+]);
+
+const toggleAvatarMenu = (event) => {
+    avatarMenu.value.toggle(event);
+};
 </script>

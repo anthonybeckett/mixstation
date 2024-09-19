@@ -10,6 +10,7 @@ import PrimeVue from "primevue/config";
 import Lara from "@primevue/themes/lara";
 import Dialog from 'primevue/dialog';
 import FloatLabel from "primevue/floatlabel";
+import TieredMenu from 'primevue/tieredmenu';
 
 
 export default function setupPrimeVue(app) {
@@ -32,6 +33,7 @@ export default function setupPrimeVue(app) {
     app.component('OverlayBadge', OverlayBadge);
     app.component('Dialog', Dialog);
     app.component('FloatLabel', FloatLabel);
+    app.component('TieredMenu', TieredMenu);
 
     app.directive('ripple', Ripple);
 }
