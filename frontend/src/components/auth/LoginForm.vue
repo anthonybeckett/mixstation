@@ -2,26 +2,48 @@
 import {inject, ref} from "vue";
 import Logo from "@/components/assets/Logo.vue";
 import { useAuthStore } from "@/stores/AuthStore.js";
+import { useToast } from "primevue/usetoast";
 
 const authStore = useAuthStore();
+const toast = useToast();
 
 const { signInFormVisible } = inject('signInFormVisible');
 
 const email = ref('');
 const password = ref('');
 
-const signIn = (closeSignInModal) => {
-    authStore.login({
+const showErrorMessage = (errorMessage) => {
+    toast.add({ severity: 'error', summary: 'Error', detail: errorMessage, life: 5000 });
+};
+
+const showSuccessMessage = (errorMessage) => {
+    toast.add({ severity: 'success', summary: 'Success', detail: 'Logged in. Welcome to Mix Station', life: 2000 });
+};
+
+const signIn = async (closeSignInModal) => {
+    const loginResult = await authStore.login({
         email: email.value,
         password: password.value
     });
 
-    closeSignInModal();
+    if (!loginResult.success) {
+        showErrorMessage(loginResult.error.data.message);
+
+        return false;
+    }
+
+    email.value = '';
+    password.value = '';
+
+    showSuccessMessage();
+
+    return closeSignInModal();
 }
 </script>
 
 <template>
     <div class="card flex justify-center">
+        <Toast />
         <Dialog
             v-model:visible="signInFormVisible"
             pt:root:class="!border-0 !bg-transparent"

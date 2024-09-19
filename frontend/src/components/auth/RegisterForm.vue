@@ -2,8 +2,11 @@
 import {inject, ref} from "vue";
 import Logo from "@/components/assets/Logo.vue";
 import { useAuthStore } from "@/stores/AuthStore.js";
+import { useToast } from "primevue/usetoast";
 
 const authStore = useAuthStore();
+const toast = useToast();
+
 const { registerFormVisible } = inject('registerFormVisible');
 
 const name = ref('');
@@ -11,20 +14,42 @@ const email = ref('');
 const password = ref('');
 const passwordConfirmation = ref('');
 
-const register = (closeRegisterModal) => {
-    authStore.register({
+const showErrorMessage = (errorMessage) => {
+    toast.add({ severity: 'error', summary: 'Error', detail: errorMessage, life: 5000 });
+};
+
+const showSuccessMessage = (errorMessage) => {
+    toast.add({ severity: 'success', summary: 'Success', detail: 'Registered successfully. Welcome to Mix Station', life: 2000 });
+};
+
+const register = async (closeRegisterModal) => {
+    const registerResult = await authStore.register({
         name: name.value,
         email: email.value,
         password: password.value,
         password_confirmation: passwordConfirmation.value
     });
 
-    closeRegisterModal();
+    if (!registerResult.success) {
+        showErrorMessage(registerResult.error.data.message);
+
+        return false;
+    }
+
+    name.value = '';
+    email.value = '';
+    password.value = '';
+    passwordConfirmation.value = '';
+
+    showSuccessMessage();
+
+    return closeRegisterModal();
 }
 </script>
 
 <template>
     <div class="card flex justify-center">
+        <Toast />
         <Dialog
             v-model:visible="registerFormVisible"
             pt:root:class="!border-0 !bg-transparent"

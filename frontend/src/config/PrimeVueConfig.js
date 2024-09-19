@@ -11,6 +11,7 @@ import Lara from "@primevue/themes/lara";
 import Dialog from 'primevue/dialog';
 import FloatLabel from "primevue/floatlabel";
 import TieredMenu from 'primevue/tieredmenu';
+import Toast from 'primevue/toast';
 
 
 export default function setupPrimeVue(app) {
@@ -34,6 +35,7 @@ export default function setupPrimeVue(app) {
     app.component('Dialog', Dialog);
     app.component('FloatLabel', FloatLabel);
     app.component('TieredMenu', TieredMenu);
+    app.component('Toast', Toast);
 
     app.directive('ripple', Ripple);
 }

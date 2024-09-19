@@ -19,13 +19,16 @@ export const useAuthStore = defineStore('auth', {
 
                     VueCookies.set('auth_token', this.token, null, null, null, true);
 
-                    return true;
+                    return { success: true };
                 }
             } catch (error) {
-                console.error('Login failed:', error);
+                return {
+                    success: false,
+                    error: error.response
+                };
             }
 
-            return false;
+            return { success: false };
         },
         async register(userData) {
             try {
@@ -39,13 +42,16 @@ export const useAuthStore = defineStore('auth', {
 
                     VueCookies.set('auth_token', this.token, null, null, null, true);
 
-                    return true;
+                    return { success: true };
                 }
             } catch (error) {
-                console.error('Registration failed:', error);
+                return {
+                    success: false,
+                    error: error.response
+                };
             }
 
-            return false;
+            return { success: false };
         },
         async logout() {
             try {
@@ -55,12 +61,13 @@ export const useAuthStore = defineStore('auth', {
 
                 VueCookies.remove('auth_token');
 
-                return true;
+                return { success: true };
             } catch (error) {
-                console.error('Logout failed:', error);
+                return {
+                    success: false,
+                    error: error.response
+                };
             }
-
-            return false;
         },
         async fetchUser() {
             try {
