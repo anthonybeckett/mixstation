@@ -25,12 +25,12 @@
                 <div class="flex items-center gap-4">
                     <InputText placeholder="Search" type="text" class="w-32 sm:w-auto"/>
 
-                    <!--                    <OverlayBadge value="2" size="small" severity="info" class="cursor-pointer">-->
-                    <!--                        <i class="pi pi-bell cursor-pointer" style="font-size: 1rem"></i>-->
-                    <!--                    </OverlayBadge>-->
+<!--                                        <OverlayBadge value="2" size="small" severity="info" class="cursor-pointer mx-2">-->
+<!--                                            <i class="pi pi-bell cursor-pointer" style="font-size: 1rem"></i>-->
+<!--                                        </OverlayBadge>-->
 
                     <div v-if="authStore.isAuthenticated">
-                        <Avatar label="AB" size="large" shape="circle" class="cursor-pointer" @click="toggleAvatarMenu" />
+                        <Avatar :label="getLoggedInUsersInitials()" size="large" shape="circle" class="cursor-pointer mr-4" @click="toggleAvatarMenu" />
                         <TieredMenu :model="avatarMenuItems" ref="avatarMenu" popup></TieredMenu>
                     </div>
                     <div v-else>
@@ -96,4 +96,12 @@ const avatarMenuItems = ref([
 const toggleAvatarMenu = (event) => {
     avatarMenu.value.toggle(event);
 };
+
+const getLoggedInUsersInitials = () => {
+    let username = authStore.user.name.split(" ", 2);
+
+    let usernameInitials = username.map(user => user.charAt(0).toUpperCase());
+
+    return usernameInitials.join("");
+}
 </script>
