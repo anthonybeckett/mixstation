@@ -19,7 +19,7 @@ To get started with the frontend run the following in a terminal.
 
 The frontend should now be running on port 5173 unless specified different.
 
-## Backend (Laravel 11)
+## Backend (Laravel 12)
 
 To get started running, first we need to install the composer packages in the backend directory.
 
