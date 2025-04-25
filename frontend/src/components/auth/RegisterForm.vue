@@ -52,8 +52,8 @@ const register = async (closeRegisterModal) => {
         <Toast />
         <Dialog
             v-model:visible="registerFormVisible"
-            pt:root:class="!border-0 !bg-transparent"
-            pt:mask:class="backdrop-blur-sm"
+            pt:root:class="border-0! bg-transparent!"
+            pt:mask:class="backdrop-blur-xs"
         >
             <template #container="{ closeCallback }">
                 <div class="flex flex-col px-8 py-8 gap-2 rounded-2xl bg-white">
