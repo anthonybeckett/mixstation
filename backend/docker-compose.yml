@@ -55,6 +55,17 @@ services:
             - '${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
+    vue-frontend:
+        build:
+            context: ../frontend
+            dockerfile: docker/Dockerfile
+        ports:
+            - "5173:5173"
+        volumes:
+            - ../frontend:/app
+            - /app/node_modules
+        environment:
+            - NODE_ENV=development
 networks:
     sail:
         driver: bridge

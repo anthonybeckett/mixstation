@@ -5,6 +5,17 @@ for others to listen to. It is built on a VueJS frontend, Laravel backend and a 
 
 # Development
 
+## Getting Started
+
+All the services required are handled with Docker & Docker Compose. This can be found in the backend directory
+in the `docker-compose.yml` file.
+
+To get started, in the root directory just run the following.
+
+```bash
+  make start
+```
+
 ## Frontend (Vue 3)
 
 To get started with the frontend run the following in a terminal.
@@ -13,8 +24,6 @@ To get started with the frontend run the following in a terminal.
   cd ./frontend
   
   npm i
-  
-  npm run dev
 ```
 
 The frontend should now be running on port 5173 unless specified different.
@@ -38,8 +47,6 @@ Next, we need to create a .env and update the DB credentials as needed.
 Now we can run the migrations then start the API. The backend uses docker through Laravel Sail.
 ```bash
   php artisan migrate
-  
-  ./vendor/bin/sail up -d
 ```
 
 To analyse the code base, we can run PHP Stan
@@ -59,7 +66,7 @@ To format the codebase we can run PHP Pint
 ### Issues / Clean up
 - [ ] Implement own waveform analyser and cache results when page changes
 - [ ] Make waveform resizeable to fill width of container object
-- [ ] Rename backend database to mixstation and rebuild container
+- [x] ~~Rename backend database to mixstation and rebuild container~~
 - [x] ~~Handle errors and show when login/register fails~~
 - [x] ~~Set up cookie when user logs in or registers to store token~~
 - [ ] Clean up register and login components and reduce duplication
@@ -77,7 +84,7 @@ To format the codebase we can run PHP Pint
 - [x] ~~Setup ESLint~~
 - [x] ~~Tidy up index.js and move some config options into a config directory~~
 - [ ] Add dark mode button - https://primevue.org/theming/styled/#darkmode
-- [ ] Setup docker
+- [x] ~~Setup docker~~
 
 ### Backend
 - [x] ~~Setup Laravel~~
@@ -110,8 +117,8 @@ To format the codebase we can run PHP Pint
 
 ### Docker
 This will come later when the project is at a decent point
-- [ ] Setup and containerise Vue JS frontend
-- [ ] Make global docker compose file including the files from both directories
+- [x] ~~Setup and containerise Vue JS frontend~~
+- [x] ~~Make global docker compose file including the files from both directories~~
 
 ### React Native
 Will need to flesh this out more but not a high priority for a mobile app
@@ -119,5 +126,3 @@ Will need to flesh this out more but not a high priority for a mobile app
 ### Other
 - [ ] Find a free service to create a task board or host something on a raspberry pi
   - Set up a local Raspberry Pi
-  - Host Youtrack - https://www.jetbrains.com/youtrack/
-    - https://www.jetbrains.com/help/youtrack/server/7.0/Install-YouTrack-ZIP-Installation.html
