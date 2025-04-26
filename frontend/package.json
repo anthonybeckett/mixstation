@@ -15,7 +15,7 @@
     "@primevue/themes": "^4.0.5",
     "axios": "^1.8.2",
     "install": "^0.13.0",
-    "npm": "^10.8.3",
+    "npm": "^11.3.0",
     "pinia": "^3.0.2",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.5",
