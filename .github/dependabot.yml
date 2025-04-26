@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/frontend"
     schedule:
-    interval: "weekly"
+      interval: "weekly"
   - package-ecosystem: "composer"
     directory: "/backend"
     schedule:
