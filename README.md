@@ -69,7 +69,7 @@ To format the codebase we can run PHP Pint
 - [x] ~~Rename backend database to mixstation and rebuild container~~
 - [x] ~~Handle errors and show when login/register fails~~
 - [x] ~~Set up cookie when user logs in or registers to store token~~
-- [ ] Clean up register and login components and reduce duplication
+- [x] ~~Clean up register and login components and reduce duplication~~
 
 ### Design bits:
 - [x] ~~Create a logo~~ 

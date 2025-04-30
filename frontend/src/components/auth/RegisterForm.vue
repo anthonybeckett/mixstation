@@ -1,55 +1,54 @@
 <script setup>
-import {inject, ref} from "vue";
+import {inject, reactive} from "vue";
 import Logo from "@/components/assets/Logo.vue";
-import { useAuthStore } from "@/stores/AuthStore.js";
-import { useToast } from "primevue/usetoast";
+import {useAuthStore} from "@/stores/AuthStore.js";
+import {useShowError, useShowSuccess} from "@/composables/helpers/toastHelpers.js";
 
+const showError = useShowError();
+const showSuccess = useShowSuccess();
 const authStore = useAuthStore();
-const toast = useToast();
 
-const { registerFormVisible } = inject('registerFormVisible');
+const {registerFormVisible} = inject('registerFormVisible');
 
-const name = ref('');
-const email = ref('');
-const password = ref('');
-const passwordConfirmation = ref('');
-
-const showErrorMessage = (errorMessage) => {
-    toast.add({ severity: 'error', summary: 'Error', detail: errorMessage, life: 5000 });
-};
-
-const showSuccessMessage = (errorMessage) => {
-    toast.add({ severity: 'success', summary: 'Success', detail: 'Registered successfully. Welcome to Mix Station', life: 2000 });
-};
+const form = reactive({
+    name: '',
+    email: '',
+    password: '',
+    passwordConfirmation: ''
+});
 
 const register = async (closeRegisterModal) => {
     const registerResult = await authStore.register({
-        name: name.value,
-        email: email.value,
-        password: password.value,
-        password_confirmation: passwordConfirmation.value
+        name: form.name,
+        email: form.email,
+        password: form.password,
+        password_confirmation: form.passwordConfirmation
     });
 
     if (!registerResult.success) {
-        showErrorMessage(registerResult.error.data.message);
+        showError(registerResult.error.data.message);
 
         return false;
     }
 
-    name.value = '';
-    email.value = '';
-    password.value = '';
-    passwordConfirmation.value = '';
+    resetForm();
 
-    showSuccessMessage();
+    showSuccess('Registered successfully. Welcome to Mix Station');
 
     return closeRegisterModal();
+}
+
+const resetForm = () => {
+    form.name = '';
+    form.email = '';
+    form.password = '';
+    form.passwordConfirmation = '';
 }
 </script>
 
 <template>
     <div class="card flex justify-center">
-        <Toast />
+        <Toast/>
         <Dialog
             v-model:visible="registerFormVisible"
             pt:root:class="border-0! bg-transparent!"
@@ -58,29 +57,29 @@ const register = async (closeRegisterModal) => {
             <template #container="{ closeCallback }">
                 <div class="flex flex-col px-8 py-8 gap-2 rounded-2xl bg-white">
                     <div class="flex justify-center">
-                        <Logo :size="120" class="flex justify-center" />
+                        <Logo :size="120" class="flex justify-center"/>
                     </div>
 
                     <h1 class="font-bold text-xl text-center">Log In</h1>
 
                     <div class="flex flex-col gap-8">
                         <FloatLabel>
-                            <InputText id="name" v-model="name" />
+                            <InputText id="name" v-model="form.name"/>
                             <label for="name">Name</label>
                         </FloatLabel>
 
                         <FloatLabel>
-                            <InputText id="email" v-model="email" />
+                            <InputText id="email" v-model="form.email"/>
                             <label for="email">Email</label>
                         </FloatLabel>
 
                         <FloatLabel>
-                            <InputText id="password" type="password" v-model="password" />
+                            <InputText id="password" type="password" v-model="form.password"/>
                             <label for="password">Password</label>
                         </FloatLabel>
 
                         <FloatLabel>
-                            <InputText id="password-confirmation" type="password" v-model="passwordConfirmation" />
+                            <InputText id="password-confirmation" type="password" v-model="form.passwordConfirmation"/>
                             <label for="password-confirmation">Confirm Password</label>
                         </FloatLabel>
                     </div>

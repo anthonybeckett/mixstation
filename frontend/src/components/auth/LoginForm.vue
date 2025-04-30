@@ -1,49 +1,48 @@
 <script setup>
-import {inject, ref} from "vue";
+import {inject, reactive} from "vue";
 import Logo from "@/components/assets/Logo.vue";
-import { useAuthStore } from "@/stores/AuthStore.js";
-import { useToast } from "primevue/usetoast";
+import {useAuthStore} from "@/stores/AuthStore.js";
+import {useShowError, useShowSuccess} from "@/composables/helpers/toastHelpers.js";
 
+const showError = useShowError();
+const showSuccess = useShowSuccess();
 const authStore = useAuthStore();
-const toast = useToast();
 
-const { signInFormVisible } = inject('signInFormVisible');
+const {signInFormVisible} = inject('signInFormVisible');
 
-const email = ref('');
-const password = ref('');
-
-const showErrorMessage = (errorMessage) => {
-    toast.add({ severity: 'error', summary: 'Error', detail: errorMessage, life: 5000 });
-};
-
-const showSuccessMessage = (errorMessage) => {
-    toast.add({ severity: 'success', summary: 'Success', detail: 'Logged in. Welcome to Mix Station', life: 2000 });
-};
+const form = reactive({
+    email: '',
+    password: ''
+});
 
 const signIn = async (closeSignInModal) => {
     const loginResult = await authStore.login({
-        email: email.value,
-        password: password.value
+        email: form.email,
+        password: form.password
     });
 
     if (!loginResult.success) {
-        showErrorMessage(loginResult.error.data.message);
+        showError(loginResult.error.data.message);
 
         return false;
     }
 
-    email.value = '';
-    password.value = '';
+    resetForm();
 
-    showSuccessMessage();
+    showSuccess('Logged in. Welcome to Mix Station');
 
     return closeSignInModal();
+}
+
+const resetForm = () => {
+    form.email = '';
+    form.password = '';
 }
 </script>
 
 <template>
     <div class="card flex justify-center">
-        <Toast />
+        <Toast/>
         <Dialog
             v-model:visible="signInFormVisible"
             pt:root:class="border-0! bg-transparent!"
@@ -52,19 +51,19 @@ const signIn = async (closeSignInModal) => {
             <template #container="{ closeCallback }">
                 <div class="flex flex-col px-8 py-8 gap-2 rounded-2xl bg-white">
                     <div class="flex justify-center">
-                        <Logo :size="120" class="flex justify-center" />
+                        <Logo :size="120" class="flex justify-center"/>
                     </div>
 
                     <h1 class="font-bold text-xl text-center">Log In</h1>
 
                     <div class="flex flex-col gap-8">
                         <FloatLabel>
-                            <InputText id="email" v-model="email" />
+                            <InputText id="email" v-model="form.email"/>
                             <label for="email">Email</label>
                         </FloatLabel>
 
                         <FloatLabel>
-                            <InputText id="password" type="password" v-model="password" />
+                            <InputText id="password" type="password" v-model="form.password"/>
                             <label for="password">Password</label>
                         </FloatLabel>
                     </div>
@@ -81,7 +80,8 @@ const signIn = async (closeSignInModal) => {
                             label="Sign-In"
                             severity="info"
                             @click="signIn(closeCallback)"
-                            text></Button>
+                            text
+                        ></Button>
                     </div>
                 </div>
             </template>
