@@ -18,7 +18,7 @@
     "npm": "^11.3.0",
     "pinia": "^3.0.2",
     "primeicons": "^7.0.0",
-    "primevue": "^4.0.5",
+    "primevue": "^4.3.4",
     "tailwindcss-primeui": "^0.6.1",
     "vue": "^3.4.29",
     "vue-audio-visual": "^3.0.8",
