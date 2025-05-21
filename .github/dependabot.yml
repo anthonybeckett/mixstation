@@ -4,6 +4,7 @@ updates:
     directory: "/frontend"
     schedule:
       interval: "weekly"
+
   - package-ecosystem: "composer"
     directory: "/backend"
     schedule:
